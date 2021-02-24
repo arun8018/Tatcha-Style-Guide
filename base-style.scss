@@ -1,0 +1,253 @@
+/* GENERAL VARIABLES */
+
+// COLOR
+$clr-primary-main: #685bc7;
+$clr-primary-dark: #4f40bc;
+$clr-primary-light: #9991d8;
+// VALIDATE
+$clr-valid: #28a745;
+$clr-invalid: #dc3545;
+// LIGHT SHADE
+$clr-light-100: #ffffff;
+$clr-light-200: #f8f8f8;
+$clr-light-300: #e2e6ea;
+// DARK SHADE
+$clr-dark-100: #000000;
+$clr-dark-200: #221d1d;
+$clr-dark-300: #707070;
+// FONT SIZE
+$fs-xs: 1rem;
+$fs-sm: 1.2rem;
+$fs-md: 1.4rem;
+$fs-lg: 1.6rem;
+$fs-xl: 1.8rem;
+$fs-xxl: 2rem;
+// FONT WEIGHT
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+
+/* GENERAL VARIABLES */
+
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 62.5%;
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-size: $fs-md;
+    // font-family: "Helvetica Neue", Helvetica;
+    font-family:inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "segoe ui",
+    Roboto,
+    "helvetica neue",
+    Arial,
+    sans-serif;
+    font-weight: $fw-regular;
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.01);
+      background-color: $clr-light-200;
+    }
+    &::-webkit-scrollbar {
+      width: 1rem;
+      background-color: $clr-light-200;
+      @media (min-width: 768px) {
+        width: 0.7rem;
+      }
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: $clr-light-300;
+      border-radius: 1rem;
+      @media (min-width: 768px) {
+        background-color: #e5e5e5;
+      }
+    }
+    .form-group {
+      &.has-error {
+        .help-block {
+          display: block;
+        }
+      }
+      .form-control {
+        display: block;
+        width: 100%;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555555;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #ccc;
+        height: 4.2rem;
+        &::placeholder {
+          font-size: $fs-md;
+          font-weight: $fw-regular;
+          color: $clr-dark-300;
+          text-transform: capitalize;
+          line-height: 1.6rem;
+        }
+        &:focus {
+          border-color: $clr-primary-main;
+          box-shadow: none;
+        }
+        &.is-valid {
+          border-color: $clr-valid;
+          ~ .valid-feedback {
+            padding-left: 0.5rem;
+            font-size: $fs-sm;
+          }
+          &:focus {
+            box-shadow: none;
+          }
+        }
+        &.is-invalid {
+          border-color: $clr-invalid;
+          ~ .invalid-feedback {
+            padding-left: 0.5rem;
+            font-size: $fs-sm;
+          }
+          &:focus {
+            box-shadow: none;
+          }
+        }
+      }
+      .help-block {
+        color: $clr-invalid;
+        display: none;
+      }
+      .custom-control {
+        display: flex;
+        align-items: center;
+        user-select: none;
+        .custom-control-input {
+          padding: 0;
+          height: initial;
+          width: initial;
+          margin-bottom: 0;
+          display: none;
+          cursor: pointer;
+          &:checked + label:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0.2rem;
+            left: 0.6rem;
+            width: 0.5rem;
+            height: 1rem;
+            border: solid $clr-light-100;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+            border-radius: 0.3rem;
+          }
+          &:checked + label::before {
+            background: $clr-primary-main;
+          }
+        }
+        .custom-control-label {
+          position: relative;
+          cursor: pointer;
+          margin: 0;
+          color: $clr-dark-300;
+          font-size: $fs-sm;
+          font-weight: $fw-regular;
+          line-height: 1.4rem;
+          display: flex;
+          align-items: center;
+          &::before {
+            content: "";
+            -webkit-appearance: none;
+            background-color: transparent;
+            border: 1px solid $clr-primary-main;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+              inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+            padding: 0.75rem;
+            display: inline-block;
+            position: relative;
+            vertical-align: middle;
+            cursor: pointer;
+            margin-right: 1rem;
+            border-radius: 0.3rem;
+          }
+        }
+      }
+    }
+    .btn,
+    .ripple {
+      position: relative;
+      overflow: hidden;
+      @keyframes ripple {
+        0% {
+          width: 0;
+          height: 0;
+          opacity: 0.5;
+        }
+        100% {
+          width: 50rem;
+          height: 50rem;
+          opacity: 0;
+        }
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background-color: currentColor;
+        visibility: hidden;
+        z-index: 1;
+      }
+      &:not(:active):before {
+        animation: ripple 1.25s cubic-bezier(0, 0, 0.2, 1);
+        transition: visibility 1.25s step-end;
+      }
+      &:active:before {
+        visibility: visible;
+      }
+    }
+    .btn {
+      padding: 1rem 4rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1.6rem;
+      font-size: $fs-md;
+      font-weight: $fw-bold;
+      border-radius: 0.5rem;
+    }
+    .btn-primary {
+      background-color: $clr-primary-main;
+      border-color: $clr-primary-main;
+      &:hover,
+      &.disabled,
+      &:disabled,
+      &:not(:disabled):not(.disabled):active,
+      &.btn-primary:not(:disabled):not(.disabled).active,
+      &.show > .btn-primary.dropdown-toggle {
+        background-color: $clr-primary-dark;
+        border-color: $clr-primary-dark;
+      }
+      &.focus,
+      &:focus,
+      &:not(:disabled):not(.disabled):active:focus,
+      &.btn-primary:not(:disabled):not(.disabled).active:focus,
+      &.show > .btn-primary.dropdown-toggle:focus {
+        box-shadow: none;
+        background-color: $clr-primary-dark !important;
+        border-color: $clr-primary-dark !important;
+      }
+    }
+  }
+}

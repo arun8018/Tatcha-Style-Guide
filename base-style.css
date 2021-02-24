@@ -1,0 +1,306 @@
+/* GENERAL VARIABLES */
+/* GENERAL VARIABLES */
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 62.5%;
+}
+
+html body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 1.4rem;
+  font-family: inter, -apple-system, BlinkMacSystemFont, "segoe ui", Roboto, "helvetica neue", Arial, sans-serif;
+  font-weight: 400;
+}
+
+html body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.01);
+  background-color: #f8f8f8;
+}
+
+html body::-webkit-scrollbar {
+  width: 1rem;
+  background-color: #f8f8f8;
+}
+
+@media (min-width: 768px) {
+  html body::-webkit-scrollbar {
+    width: 0.7rem;
+  }
+}
+
+html body::-webkit-scrollbar-thumb {
+  background-color: #e2e6ea;
+  border-radius: 1rem;
+}
+
+@media (min-width: 768px) {
+  html body::-webkit-scrollbar-thumb {
+    background-color: #e5e5e5;
+  }
+}
+
+html body .form-group.has-error .help-block {
+  display: block;
+}
+
+html body .form-group .form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  height: 4.2rem;
+}
+
+html body .form-group .form-control::-webkit-input-placeholder {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #707070;
+  text-transform: capitalize;
+  line-height: 1.6rem;
+}
+
+html body .form-group .form-control:-ms-input-placeholder {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #707070;
+  text-transform: capitalize;
+  line-height: 1.6rem;
+}
+
+html body .form-group .form-control::-ms-input-placeholder {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #707070;
+  text-transform: capitalize;
+  line-height: 1.6rem;
+}
+
+html body .form-group .form-control::placeholder {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #707070;
+  text-transform: capitalize;
+  line-height: 1.6rem;
+}
+
+html body .form-group .form-control:focus {
+  border-color: #685bc7;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+html body .form-group .form-control.is-valid {
+  border-color: #28a745;
+}
+
+html body .form-group .form-control.is-valid ~ .valid-feedback {
+  padding-left: 0.5rem;
+  font-size: 1.2rem;
+}
+
+html body .form-group .form-control.is-valid:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+html body .form-group .form-control.is-invalid {
+  border-color: #dc3545;
+}
+
+html body .form-group .form-control.is-invalid ~ .invalid-feedback {
+  padding-left: 0.5rem;
+  font-size: 1.2rem;
+}
+
+html body .form-group .form-control.is-invalid:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+html body .form-group .help-block {
+  color: #dc3545;
+  display: none;
+}
+
+html body .form-group .custom-control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+html body .form-group .custom-control .custom-control-input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+
+html body .form-group .custom-control .custom-control-input:checked + label:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0.2rem;
+  left: 0.6rem;
+  width: 0.5rem;
+  height: 1rem;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border-radius: 0.3rem;
+}
+
+html body .form-group .custom-control .custom-control-input:checked + label::before {
+  background: #685bc7;
+}
+
+html body .form-group .custom-control .custom-control-label {
+  position: relative;
+  cursor: pointer;
+  margin: 0;
+  color: #707070;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+html body .form-group .custom-control .custom-control-label::before {
+  content: "";
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 1px solid #685bc7;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 0.75rem;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 1rem;
+  border-radius: 0.3rem;
+}
+
+html body .btn,
+html body .ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+@-webkit-keyframes ripple {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.5;
+  }
+  100% {
+    width: 50rem;
+    height: 50rem;
+    opacity: 0;
+  }
+}
+
+@keyframes ripple {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.5;
+  }
+  100% {
+    width: 50rem;
+    height: 50rem;
+    opacity: 0;
+  }
+}
+
+html body .btn:before,
+html body .ripple:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: currentColor;
+  visibility: hidden;
+  z-index: 1;
+}
+
+html body .btn:not(:active):before,
+html body .ripple:not(:active):before {
+  -webkit-animation: ripple 1.25s cubic-bezier(0, 0, 0.2, 1);
+          animation: ripple 1.25s cubic-bezier(0, 0, 0.2, 1);
+  -webkit-transition: visibility 1.25s step-end;
+  transition: visibility 1.25s step-end;
+}
+
+html body .btn:active:before,
+html body .ripple:active:before {
+  visibility: visible;
+}
+
+html body .btn {
+  padding: 1rem 4rem;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  line-height: 1.6rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+}
+
+html body .btn-primary {
+  background-color: #685bc7;
+  border-color: #685bc7;
+}
+
+html body .btn-primary:hover, html body .btn-primary.disabled, html body .btn-primary:disabled, html body .btn-primary:not(:disabled):not(.disabled):active, html body .btn-primary.btn-primary:not(:disabled):not(.disabled).active,
+html body .btn-primary.show > .btn-primary.dropdown-toggle {
+  background-color: #4f40bc;
+  border-color: #4f40bc;
+}
+
+html body .btn-primary.focus, html body .btn-primary:focus, html body .btn-primary:not(:disabled):not(.disabled):active:focus, html body .btn-primary.btn-primary:not(:disabled):not(.disabled).active:focus,
+html body .btn-primary.show > .btn-primary.dropdown-toggle:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: #4f40bc !important;
+  border-color: #4f40bc !important;
+}
+/*# sourceMappingURL=base-style.css.map */
